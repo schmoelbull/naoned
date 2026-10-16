@@ -1,0 +1,22 @@
+{
+  "name": "naoned",
+  "version": "1.0.0",
+  "description": "Assistant téléphonique IA auto-hébergé (Asterisk + OpenAI Realtime)",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch src/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "ws": "^8.18.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

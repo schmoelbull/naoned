@@ -1,0 +1,21 @@
+[Unit]
+Description=Naoned - assistant telephonique IA
+After=network-online.target asterisk.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=naoned
+Group=naoned
+SupplementaryGroups=asterisk
+WorkingDirectory=/opt/naoned
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning src/server.js
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=production
+NoNewPrivileges=yes
+ProtectSystem=full
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

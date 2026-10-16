@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naoned – Assistant téléphonique IA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="login" class="login hidden">
+    <form id="login-form" class="card login-card">
+      <div class="brand big">📞 Naoned</div>
+      <p class="muted">Assistant téléphonique IA</p>
+      <label>Mot de passe<input type="password" name="password" autocomplete="current-password" required autofocus></label>
+      <button class="btn primary" type="submit">Se connecter</button>
+      <p id="login-error" class="error"></p>
+    </form>
+  </div>
+
+  <div id="app" class="layout hidden">
+    <aside class="sidebar">
+      <div class="brand">📞 Naoned</div>
+      <nav id="nav">
+        <a href="#/" data-view="dashboard">📊 Tableau de bord</a>
+        <a href="#/calls" data-view="calls">📞 Appels</a>
+        <a href="#/messages" data-view="messages">✉️ Messages <span id="badge-msg" class="badge hidden"></span></a>
+        <a href="#/appointments" data-view="appointments">📅 Rendez-vous</a>
+        <div class="nav-sep">Configuration</div>
+        <a href="#/assistant" data-view="assistant">🤖 Assistant</a>
+        <a href="#/knowledge" data-view="knowledge">📚 Connaissances</a>
+        <a href="#/hours" data-view="hours">🕒 Horaires</a>
+        <a href="#/calendar" data-view="calendar">🗓️ Agenda</a>
+        <a href="#/notifications" data-view="notifications">🔔 Notifications</a>
+      </nav>
+      <button id="logout" class="btn ghost small">Déconnexion</button>
+    </aside>
+    <main id="view" class="content"></main>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
